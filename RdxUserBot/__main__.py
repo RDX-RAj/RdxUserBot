@@ -14,7 +14,7 @@ async def main():
     await run_async_clients()
     for all_plugin in ALL_PLUGINS:
         imported_plugin = importlib.import_module(
-            "RdxRaj.plugins" + all_plugin
+            "RdxUserBot.plugins" + all_plugin
         )
         if (hasattr
             (
