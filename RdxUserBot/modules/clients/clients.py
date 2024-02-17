@@ -52,21 +52,21 @@ async_dirs()
     
 
 app = Client(
-    name = "RdxRaj",
+    name = "AdityaHalder",
     api_id = API_ID,
     api_hash = API_HASH,
     session_string = STRING_SESSION,
 )
 
 ass = Client(
-    name = "RdxPlayer",
+    name = "AdityaPlayer",
     api_id = API_ID,
     api_hash = API_HASH,
     session_string = SESSION_STRING,
 )
 
 bot = Client(
-    name = "RdxServer",
+    name = "AdityaServer",
     api_id = API_ID,
     api_hash = API_HASH,
     bot_token = BOT_TOKEN,
@@ -113,8 +113,8 @@ async def run_async_clients():
     except:
         pass
     try:
-        await app.join_chat("AdityaServer")
-        await app.join_chat("AdityaDiscus")
+        await app.join_chat("https://t.me/+PtOLQT04ocMzOTJl")
+        await app.join_chat("https://t.me/+RObRa7kXPIJmMjU1")
     except:
         pass
     if SESSION_STRING:
@@ -126,8 +126,8 @@ async def run_async_clients():
         except:
             pass
         try:
-            await app.join_chat("AdityaServer")
-            await app.join_chat("AdityaDiscus")
+            await app.join_chat("https://t.me/+PtOLQT04ocMzOTJl")
+            await app.join_chat("https://t.me/+RObRa7kXPIJmMjU1")
         except:
             pass
     LOGGER.info("Starting Helper Robot ...")
