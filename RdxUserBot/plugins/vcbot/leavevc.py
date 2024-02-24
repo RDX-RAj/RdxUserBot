@@ -7,7 +7,7 @@ from ...modules.mongo.streams import *
 from ...modules.utilities import queues
 
 
-@app.on_message(cdx(["lve", "leave", "leavevc"]) & ~filters.private)
+@app.on_message(cdx(["lve", "rdxlve", "leave", "leavevc"]) & ~filters.private)
 @sudo_users_only
 async def leave_vc(client, message):
     chat_id = message.chat.id
@@ -22,21 +22,21 @@ async def leave_vc(client, message):
             except QueueEmpty:
                 pass
             await call.leave_group_call(chat_id)
-            await eor(message, "**𝐋𝐞𝐟𝐭 𝐕𝐂!**")
+            await eor(message, "**ʟᴇғᴛ ᴠᴄ**")
     except GroupCallNotFound:
-        await eor(message, "**𝐈 𝐚𝐦 𝐍𝐨𝐭 𝐢𝐧 𝐕𝐂!**")
+        await eor(message, "**ɪ ᴀᴍ ɴᴏᴛ ɪɴ ᴠᴄ**")
     except Exception as e:
         print(f"Error: {e}")
 
 
-@app.on_message(cdz(["clve", "cleave", "cleavevc"]))
+@app.on_message(cdz(["clve", " rdxclve", "cleave", "cleavevc"]))
 @sudo_users_only
 async def leave_vc_(client, message):
     user_id = message.from_user.id
     chat_id = await get_chat_id(user_id)
     if chat_id == 0:
         return await eor(message,
-            "** 𝐍𝐨 𝐒𝐭𝐫𝐞𝐚𝐦 𝐂𝐡𝐚𝐭 𝐒𝐞𝐭**"
+            "** ɴᴏ sᴛʀᴇᴀᴍ ɴᴏᴛ sᴇᴛ**"
     )
     try:
         a = await call.get_call(chat_id)
@@ -49,8 +49,8 @@ async def leave_vc_(client, message):
             except QueueEmpty:
                 pass
             await call.leave_group_call(chat_id)
-            await eor(message, "**ʟєғṭ ṿċ!**")
+            await eor(message, "**ʟᴇғᴛ ᴠᴄ**")
     except GroupCallNotFound:
-        await eor(message, "**ı ѧṃ ṅȏṭ ıṅ ṿċ!**")
+        await eor(message, "**ı ᴀᴍ ɴᴏᴛ ɪɴ ᴠᴄ!**")
     except Exception as e:
         print(f"Error: {e}")
