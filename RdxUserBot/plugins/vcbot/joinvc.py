@@ -4,7 +4,7 @@ from pyrogram import filters
 from pytgcalls.exceptions import GroupCallNotFound
 
 
-@app.on_message(cdx(["join", "joinvc"]) & ~filters.private)
+@app.on_message(cdx(["join", "joinvc", "rdxvc"]) & ~filters.private)
 @sudo_users_only
 async def join_vc(client, message):
     chat_id = message.chat.id
@@ -14,15 +14,15 @@ async def join_vc(client, message):
             or a.status == "playing"
             or a.status == "paused"
         ):
-            await eor(message, "**αℓяєα∂у נσιηє∂!**")
+            await eor(message, "**ᴀʟʀᴇᴀᴅʏ ᴊᴏɪɴᴅ**")
     except GroupCallNotFound:
         await call.join_group_call(chat_id)
-        await eor(message, "**נσιηє∂ ν¢!**")
+        await eor(message, "**ᴊᴏɪɴᴇᴅ ᴠᴄ**")
     except Exception as e:
         print(f"Error: {e}")
 
 
-@app.on_message(cdz(["cjoin", "cjoinvc"]))
+@app.on_message(cdz(["cjoin", "cjoinvc", "rdxcjoin"]))
 @sudo_users_only
 async def join_vc_(client, message):
     user_id = message.from_user.id
@@ -37,9 +37,9 @@ async def join_vc_(client, message):
             or a.status == "playing"
             or a.status == "paused"
         ):
-            await eor(message, "**𝙰𝚕𝚛𝚎𝚊𝚍𝚢 𝙹𝚘𝚒𝚗𝚎𝚍!**")
+            await eor(message, "**ᴀʟʀᴇᴀᴅʏ ᴊᴏɪɴᴇᴅ!**")
     except GroupCallNotFound:
         await call.join_group_call(chat_id)
-        await eor(message, "**𝙹𝚘𝚒𝚗𝚎𝚍 𝚅𝙲!**")
+        await eor(message, "**ᴊᴏɪɴᴇᴅ ᴠᴄ!**")
     except Exception as e:
         print(f"Error: {e}")
