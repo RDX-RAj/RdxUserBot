@@ -2,7 +2,7 @@ from ... import *
 from ...modules.mongo.raidzone import *
 
 
-@app.on_message(cdx(["lr", "lraid", "loveraid"]))
+@app.on_message(cdx(["lr", "rdxlr", "lraid", "loveraid"]))
 @sudo_users_only
 async def add_love_raid(client, message):
     try:
@@ -40,7 +40,7 @@ async def add_love_raid(client, message):
 
 
 
-@app.on_message(cdx(["dlr", "dlraid", "dloveraid"]))
+@app.on_message(cdx(["dlr", "rdxdlr", "dlraid", "dloveraid"]))
 @sudo_users_only
 async def del_love_raid(client, message):
     try:
