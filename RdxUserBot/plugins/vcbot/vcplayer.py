@@ -1,4 +1,4 @@
-# Powered By // @AdityaHalder //
+# Powered By // @RDX-RAj //
 
 __NAME__ = "VcPlayer"
 __MENU__ = """
