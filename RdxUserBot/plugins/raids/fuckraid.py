@@ -2,7 +2,7 @@ from ... import *
 from ...modules.mongo.raidzone import *
 
 
-@app.on_message(cdx(["fr", "rr", "rraid", "fuckraid"]))
+@app.on_message(cdx(["fr", "rdxfr", "rr", "rraid", "fuckraid"]))
 @sudo_users_only
 async def add_fuck_raid(client, message):
     try:
@@ -10,7 +10,7 @@ async def add_fuck_raid(client, message):
         if not message.reply_to_message:
             if len(message.command) != 2:
                 return await aux.edit(
-                    "**🤖 ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴜsᴇʀ's ᴍᴇssᴀɢᴇ ᴏʀ ɢɪᴠᴇ ᴜsᴇʀɴᴀᴍᴇ/ᴜsᴇʀ_ɪᴅ.**"
+                    "** ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴜsᴇʀ's ᴍᴇssᴀɢᴇ ᴏʀ ɢɪᴠᴇ ᴜsᴇʀɴᴀᴍᴇ/ᴜsᴇʀ_ɪᴅ.**"
                 )
             user = message.text.split(None, 1)[1]
             if "@" in user:
@@ -40,7 +40,7 @@ async def add_fuck_raid(client, message):
 
 
 
-@app.on_message(cdx(["dfr", "drr", "drraid", "dfuckraid"]))
+@app.on_message(cdx(["dfr", "drr", " rdxdfr", "drraid", "dfuckraid"]))
 @sudo_users_only
 async def del_fuck_raid(client, message):
     try:
